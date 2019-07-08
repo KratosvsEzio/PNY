@@ -1,0 +1,141 @@
+.chat-groups{
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  z-index: 1;
+  background-color: white;
+  padding-bottom: 38px;
+}
+
+.menu-chat-group{
+  min-height: 72px;
+  width: 100%;
+  align-items: center;
+  border-top: 1px solid #e9ebeb;
+  display: flex;
+}
+
+.menu-chat-group:hover{
+  background-color: #f4f5f5;
+  border-top: 1px solid #f4f5f5;
+}
+
+.menu-chat-group:hover .menu-chat-group-options-icon{
+  display: inline-block;
+}
+
+.menu-chat-group-img{
+  height: inherit;
+  align-items: center;
+  padding: 0 15px 0 13px;
+  display:flex;
+  flex: none;
+}
+
+.menu-chat-group-img img{
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu-chat-group-info{
+  display:flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 15px;
+  min-width: 0;
+}
+
+.menu-chat-group-title{
+  text-align: left;
+  align-items: center;
+  line-height: normal;
+  display: flex
+}
+
+.menu-chat-group-title-text{
+  text-align: left;
+  color: black;
+  display: flex;
+  flex-grow: 1;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 21px;
+  overflow: hidden;
+}
+
+.menu-chat-group-title-date{
+  margin-top: 3px;
+  margin-left: 6px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  flex: none;
+  font-size: 12px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.menu-chat-group-text{
+  color: #454545;
+  margin-top: 2px;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  font-size: 13px;
+  line-height: 20px;
+  min-height: 20px;
+}
+
+.menu-chat-group-text-text{
+  text-align: left;
+  background-color: transparent;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.menu-chat-group-options{
+  color: rgba(0, 0, 0, 0.4);
+  flex: none;
+  font-size: 12px;
+  max-width: 100%;
+}
+
+.menu-chat-group-options-icon{
+  width: 20px;
+  opacity: 1;
+  margin-left: 4px;
+  margin-right: -1px;
+  display: none;
+  height: 20px;
+  vertical-align: top;
+  align-items: center;
+}
+
+.menu-chat-group-options-icon i{
+  fill: rgb(38, 50, 56);
+  fill-opacity: 0.33;
+  width: 15px;
+  height: 9px!important;
+  font-size: 16px;
+}
+
+.heading{
+  padding: 30px 0 15px 32px;
+  background-color: #fff;
+  height: 72px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #009688;
+  text-transform: uppercase;
+  border-top: 1px solid #f2f2f2;
+}

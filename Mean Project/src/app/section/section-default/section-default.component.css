@@ -1,0 +1,82 @@
+.chat-area-default{
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: #f7f9fa;
+    cursor: default;
+    padding-bottom: 28px;
+    padding-top: 28px;
+    align-items: center;
+    box-sizing: border-box;
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-height: 600px;
+    border-bottom: 6px solid #58e870;
+}
+
+.chat-area-default-content{
+    text-align: center;
+    margin-top: -40px;;
+    max-width: 460px;
+    width: 80%;
+}
+
+.chat-area-default-img{
+    transform: scale(1);
+       opacity: 1;
+    margin: 0 auto;
+    transform-origin: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    width: 356px;
+    height: 250px;
+    transition: height .3s ease;
+    background-image: url("https://web.whatsapp.com/img/c98cc75f2aa905314d74375a975d2cf2.jpg");
+}
+
+.chat-area-default-intro-title{
+    color: #4b5961;
+    font-size: 36px;
+    font-weight: 300;
+    margin-top: 38px;
+}
+
+.chat-area-default-intro-text{
+    margin-top: 24px;
+    font-size: 14px;
+    color: #929fa6;
+    line-height: 20px;
+}
+
+.chat-area-default-intro-footer{
+    margin-top: 34px;
+}
+
+.chat-area-default-intro-seperater{
+    margin-bottom: 34px;
+    background-color: #E1E9EB;
+    height: 1px;
+}
+
+.chat-area-default-link{
+    font-size: 14px;
+    color: #929fa6;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.chat-area-default-link-icon{
+    margin-top: 1px;
+}
+
+.chat-area-default-link-text{
+    margin-left: 5px;
+    text-align: unset;
+}
+
+.chat-area-default-link-text a{
+    color: #07bc4c;
+}

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MyWhatsapp</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+	function dropdown(el,event) {
+		var x = 0;
+		var y = 5;
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		var _mouseX = event.clientX;
+		var _mouseY = event.clientY;
+		if(w >= 1300){
+			while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) && el.offsetParent != "[object HTMLDivElement]") {
+				x += el.offsetLeft - el.scrollLeft;
+				y += el.offsetTop - el.scrollTop;
+				el = el.offsetParent;
+			}
+			y = _mouseY;
+			if((h - _mouseY) < 200){
+				y -= 200;
+			}
+		}else{
+			while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop )) {
+				x += el.offsetLeft - el.scrollLeft;
+				y += el.offsetTop - el.scrollTop;
+				el = el.offsetParent;
+			}
+			y = _mouseY;
+			if((h - _mouseY) < 200){
+				y -= 200;
+			}
+		}
+		document.querySelector(".menu-dropdown").style.top = y+8+"px";
+		document.querySelector(".menu-dropdown").style.left = x+"px";
+	}
+
+
+	function message_dropdown(el,event) {
+		var x = 0;
+		var y = 5;
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		var diffX = document.querySelector(".app").clientWidth;
+
+		var _mouseX = event.clientX;
+		var _mouseY = event.clientY;
+		if(w >= 1300){
+			while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) && el.offsetParent.className != "bg") {
+				x += el.offsetLeft - el.scrollLeft;
+				y += el.offsetTop - el.scrollTop;
+				el = el.offsetParent;
+
+			}
+			if(((diffX + 72) - _mouseX) < 200){
+				x -= 150;
+			}
+			y = _mouseY;
+			if((h - _mouseY) < 300){
+				y -= 240;
+			}
+		}else{
+			while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop )) {
+				x += el.offsetLeft - el.scrollLeft;
+				y += el.offsetTop - el.scrollTop;
+				el = el.offsetParent;
+			}
+
+			if(((diffX) - _mouseX) < 200){
+				x -= 150;
+			}
+			y = _mouseY+14;
+			if((h - _mouseY) < 300){
+				y -= 240;
+			}
+		}
+		$(function(){
+			if($('div.message-dropdown').css("display")=="none"){
+				$('div.message-dropdown').show(100);
+				event.stopPropagation();
+			}else{
+				$('div.message-dropdown').hide();
+				$('div.message-dropdown').show(100);
+				event.stopPropagation();
+			}
+		});
+		document.querySelector(".message-dropdown").style.top = y+8+"px";
+		document.querySelector(".message-dropdown").style.left = x+"px";
+	}
+
+	function message_options_hide(el) {
+		var notes = null;
+		for (var i = 0; i < el.childNodes.length; i++) {
+			if (el.childNodes[i].className == "message-options-container") {
+				notes = el.childNodes[i];
+				notes = notes.childNodes[0];
+				break;
+			}
+		}
+		notes.style.display = "none";
+	}
+
+	function message_options_show(el) {
+		var notes = null;
+		for (var i = 0; i < el.childNodes.length; i++) {
+			if (el.childNodes[i].className == "message-options-container") {
+				notes = el.childNodes[i];
+				notes = notes.childNodes[0];
+				break;
+			}
+		}
+		notes.style.display = "inline-block";
+	}
+
+	$(function(){
+		$(".chat-text-input" ).keyup(function() {
+			if($(".chat-text-input").val().length == 0 ){
+				$(".send").hide();
+				$(".voice").show();
+			}else{
+				$(".send").show();
+				$(".voice").hide();
+			}
+		});
+		$('chat-area-default').toggle(
+			function(){
+				alert("dghhf");
+				$('.chat-header').show();
+				event.stopPropagation();
+				$('.article').show();
+				event.stopPropagation();
+				$('.chat-footer').show();
+				event.stopPropagation();
+			},
+			function(){
+				$('.chat-header').hide();
+				$('.article').hide();
+				$('.chat-footer').hide();
+			}
+		);
+		$('.message-container').mouseenter(function(){
+			console.log('sdasdad');
+			// if($('div.message-dropdown').css("display")=="none"){
+			// 	$('div.message-dropdown').show(100);
+			// 	event.stopPropagation();
+			// }else{
+			// 	$('div.message-dropdown').hide();
+			// 	$('div.message-dropdown').show(100);
+			// 	event.stopPropagation();
+			// }
+		});
+		$('.menu-chat-group-options').click(function(){
+			if($('div.menu-dropdown').css("display")=="none"){
+				$('div.menu-dropdown').show(100);
+				event.stopPropagation();
+			}else{
+				$('div.menu-dropdown').hide();
+				$('div.menu-dropdown').show(100);
+				event.stopPropagation();
+			}
+		});
+
+		$('body').click(function(){
+			$('div.menu-dropdown').hide(200);
+			$('div.message-dropdown').hide(200);
+		});
+
+		$('.send').click(function(){
+			$('.message-send').click();
+		});
+
+		$('.send-btn').mouseenter(function(){
+			$('.send-btn path').attr("fill-opacity",".85");
+		});
+
+		$('.send-btn').mouseleave(function(){
+			$('.send-btn path').attr("fill-opacity",".45");
+		});
+
+		$('button.dropdown-item:last-child').toggle(
+			function(){$('div.menu-dropdown').hide(300);$("button.dropdown-item:last-child").text( "Mark as Read" );},
+			function(){$('div.menu-dropdown').hide(300);$("button.dropdown-item:last-child").text( "Mark as Unread" );}
+    );
+
+    $('.btn_bg').mousedown(function(){
+			$('.btn_bg').css("opacity",".9");
+    });
+
+    $('.btn_bg').mouseup(function(){
+			$('.btn_bg').css("opacity","1");
+		});
+
+	});
+</script>
+</html>

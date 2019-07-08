@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="bg">
+    <div class="bg-top-color"></div>
+    <main class="d-flex app">
+
+    <span>
+      <div class="menu-dropdown">
+        <button class="dropdown-item" type="button">Archive chat</button>
+        <button class="dropdown-item" type="button">Mute</button>
+        <button class="dropdown-item" type="button">Exit Group</button>
+        <button class="dropdown-item" type="button">Pin Chat</button>
+        <button class="dropdown-item" type="button">Mark as Unread</button>
+      </div>
+    </span>
+    <span>
+      <div class="message-dropdown">
+        <button class="dropdown-item" type="button">Reply</button>
+        <button class="dropdown-item" type="button">Reply Privately</button>
+        <button class="dropdown-item" type="button">Forward Message</button>
+        <button class="dropdown-item" type="button">Star Message</button>
+        <button class="dropdown-item" type="button">Delete Message</button>
+        <button class="dropdown-item" type="button">Message Dad</button>
+      </div>
+    </span>
+
+    <aside class="p-0">
+      <app-side-section-component></app-side-section-component>
+    </aside>
+    <section class="chat-group p-0">
+      <app-section-chat></app-section-chat>
+    </section>
+  </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code,
+dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header,
+hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp,
+section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var,
+video {
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+@media(max-width:1300px){
+    .app{
+        width: 100vw!important;
+        height: 100vh!important;
+        margin: 0px!important;
+        border-radius: 0px!important;
+        top: 0!important;
+        left: 0!important;
+    }
+    aside{
+        flex: 35%!important;
+    }
+    section{
+        flex: 65%!important;
+    }
+    .chat-area-default{
+      border-bottom: 6px solid #58e870;
+    }
+}
+@media (max-width: 912px){
+    .chat{
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    .chat-area-default{
+      border-bottom: 6px solid #58e870;
+    }
+}
+@media (max-width: 968px){
+    .chat{
+        padding-left: 6.5%;
+        padding-right: 6.5%;
+    }
+    .chat-area-default{
+      border-bottom: 6px solid #58e870;
+    }
+}
+@media (max-width: 1024px){
+    .chat{
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .chat-group{
+        flex: 65%;
+    }
+    .message-container{
+        max-width: 85%;
+    }
+
+}
+@media (min-width: 901px){
+    .message-container{
+        max-width: 85%;
+    }
+}
+@media (max-width: 900px){
+    .chat-group{
+        flex: 60%;
+    }
+    .message-container{
+        max-width: 95%;
+    }
+}
+@media (max-height: 740px){
+    .chat-area-default-img {
+        height: 250px;
+    }
+    .chat-area-default-intro-title{
+        margin-top: 28px;
+        font-size: 32px;
+    }
+    .chat-area-default-intro-text{
+        margin-top: 18px;
+    }
+}
+
+img{
+    height: inherit;
+    width: inherit;
+}
+
+svg:hover{
+    cursor:pointer;
+}
+
+a{
+    text-decoration: none!important;
+    color: #039be5;
+}
+a:hover{
+    text-decoration: none!important;
+}
+
+.navbar-brand{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+header{
+    background-color: #eeeeee;
+    padding: 10px 16px;
+    border-left: 1px solid #e0e0e0;
+    justify-content: flex-end;
+    display: flex;
+    height: 59px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+button {
+  outline: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+button, input {
+  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+  margin: 0;
+}
+
+.chat-btn:nth-child(n+2){
+    margin-left: 10px;
+}
+
+*::-webkit-scrollbar {
+  min-width: 6px !important;
+  width: 6px !important;
+  max-width: 6px !important;
+  min-height: 6px !important;
+  height: 6px !important;
+  max-height: 6px !important;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

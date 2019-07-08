@@ -1,0 +1,133 @@
+<div class="chat-bg"></div>
+<div #scrollMe class="chat">
+  <div *ngIf="chat" class="messages">
+    <div class="messages-message" *ngFor="let message of chat.messages">
+      {{setFlags()}}
+      <div *ngIf="checkDate(message.createdAt | date:'yyyy/M/d')" class="users-message">
+        <div class="message-day-date">
+          <div *ngIf="perviousDiff == 0; else yes">
+            Today
+          </div>
+          <ng-template #yes>
+            <ng-container *ngIf="perviousDiff == 1; else wd">
+              Yesterday
+            </ng-container>
+          </ng-template>
+          <ng-template #wd>
+            <ng-container *ngIf="perviousDiff <= 7; else dt">
+              {{message.createdAt | date:'EEEE'}}
+            </ng-container>
+          </ng-template>
+          <ng-template #dt>
+            <ng-container *ngIf="perviousDiff > 7">
+              {{message.createdAt | date:'d/M/yyyy'}}
+            </ng-container>
+          </ng-template>
+        </div>
+      </div>
+
+      <!-- Other users message -->
+
+      <div *ngIf="user.userId != message.senderId">
+        <div class="users-message">
+          <span></span>
+          <div class="message-container" onMouseOver="message_options_show(this)" onMouseOut="message_options_hide(this)">
+              <span *ngIf="flagOtherUser" class="tail-container">
+                {{ setOtherUserFlags() }}
+              </span>
+            <div class="message-container-box">
+              <div class="message-user-name">
+                <span class="message-user-name-text">
+                  {{ message.senderName }}
+                </span>
+              </div>
+              <div>
+                <div class="message">
+                  <span class="selectable-text">
+                    {{ message.message }}
+                  </span>
+                </div>
+              </div>
+              <div class="message-time-container">
+                <div class="message-time">
+                  <span class="message-time-pre"></span>
+                  <span class="message-time-text">
+                    {{message.createdAt | date:'h:mm a'}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <span class="message-options-container">
+              <div class="message-options other-user-message-options-color">
+                <div data-js-context-icon="true" class="message-options-icon" onclick="message_dropdown(this,event)">
+                  <span data-icon="down-context" class="message-options-icon1">
+                    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill-opacity=".45" d="M3.3 4.6L9 10.3l5.7-5.7 1.6 1.6L9 13.4 1.7 6.2l1.6-1.6z"></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Auth user message -->
+
+      <div *ngIf="user.userId == message.senderId">
+        <div class="users-message">
+          <span></span>
+          <div class="user-message-container"  onMouseOver="message_options_show(this)" onMouseOut="message_options_hide(this)">
+            <span *ngIf="flagUser" class="user-tail-container">
+              {{ setUserFlags() }}
+            </span>
+            <div class="message-container-box">
+              <div>
+                <div class="message">
+                  <span class="selectable-text">
+                    {{message.message}}
+                  </span>
+                </div>
+              </div>
+              <div class="message-time-container">
+                <div class="message-time">
+                  <span class="message-time-pre"></span>
+                  <span class="message-time-text">
+                    {{message.createdAt | date:'h:mm a'}}
+                  </span>
+                  <div class="message-status">
+                    <span data-icon="msg-dblcheck-ack" class="">
+                      <div *ngIf="message.status == 'read'; else unread">
+                        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15" width="16" height="15">
+                          <path fill="#4FC3F7" d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path>
+                        </svg>
+                      </div>
+                      <ng-template #unread>
+                        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15" width="16" height="15">
+                          <path fill="#92A58C" d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path>
+                        </svg>
+                      </ng-template>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="message-options-container">
+              <div class="message-options user-message-options-color">
+                <div data-js-context-icon="true" class="message-options-icon" onclick="message_dropdown(this,event)">
+                  <span data-icon="down-context" class="down-context">
+                    <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18">
+                      <path fill-opacity=".45" d="M3.3 4.6L9 10.3l5.7-5.7 1.6 1.6L9 13.4 1.7 6.2l1.6-1.6z"></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{{scrollToBottom()}}

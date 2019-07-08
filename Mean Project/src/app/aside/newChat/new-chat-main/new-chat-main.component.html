@@ -1,0 +1,85 @@
+<section class="chat-groups">
+  <div *ngIf="chats.length > 0">
+    <div class="heading">
+      Frequently Contacted
+    </div>
+    <div *ngFor="let chat of chats">
+      <div *ngIf="frequently(chat.messages[chat.messages.length - 1].createdAt) <= 7">
+        <div (click)="newChat(chat)">
+          <div class="menu-chat-group">
+            <div class="menu-chat-group-img">
+              <div *ngFor="let participant of chat.participants">
+                <div *ngIf="participant.name !== user.userName">
+                  <img src="{{participant.profileImagePath}}">
+                </div>
+              </div>
+            </div>
+            <div class="menu-chat-group-info">
+              <div class="menu-chat-group-title">
+                <div class="menu-chat-group-title-text">
+                  <div *ngFor="let participant of chat.participants">
+                    <div *ngIf="participant.name !== user.userName">
+                      {{participant.name}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="menu-chat-group-text">
+                <span  class="menu-chat-group-text-text">
+                  <span *ngFor="let participant of chat.participants">
+                    <span *ngIf="participant.userId !== user.userId">
+                      {{participant.about}}
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="chats.length > 0">
+    <div *ngFor="let chat of chats">
+      <div *ngIf="alphabet(chat.participants)">
+        <div class="heading">
+          {{perviousAlpha}}
+        </div>
+      </div>
+      <div (click)="newChat(chat)">
+        <div class="menu-chat-group">
+          <div class="menu-chat-group-img">
+            <div *ngFor="let participant of chat.participants">
+              <div *ngIf="participant.name !== user.userName">
+                <img src="{{participant.profileImagePath}}">
+              </div>
+            </div>
+          </div>
+          <div class="menu-chat-group-info">
+            <div class="menu-chat-group-title">
+              <div class="menu-chat-group-title-text">
+                <div *ngFor="let participant of chat.participants">
+                  <div *ngIf="participant.name !== user.userName">
+                    {{participant.name}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="menu-chat-group-text">
+              <span  class="menu-chat-group-text-text">
+                <span *ngFor="let participant of chat.participants">
+                  <span *ngIf="participant.userId !== user.userId">
+                    {{participant.about}}
+                  </span>
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="chats.length <= 0">
+    <p class="text-center text-capitalize text-muted my-5">No Chats were found</p>
+  </div>
+</section>

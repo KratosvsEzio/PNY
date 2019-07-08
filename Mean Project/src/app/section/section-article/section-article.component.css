@@ -1,0 +1,241 @@
+.chat-bg{
+    left: 0;
+    background-repeat: repeat repeat;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.06;
+    background-image: url("https://web.whatsapp.com/img/8a055527b27b887521a9f084497d8879.png");
+}
+
+.chat{
+    border-left: 1px solid rgba(0, 0, 0, 0.03);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    transition: background .3s ease-out .1s;
+    width: 100%;
+    z-index: 100;
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-bottom: 8px;
+}
+
+.messages{
+    padding-top: 10px;
+    transition: padding-left 0.3s cubic-bezier(0.69, 0, 0.79, 0.14);
+    padding-left: 0;
+    padding-bottom: 8px;
+    flex: 1 1 auto;
+}
+
+
+.users-message{
+    margin-bottom: 12px;
+    position: relative;
+    text-align: center;
+}
+
+.users-message:after{
+    clear: both;
+    content: '';
+    display: table;
+}
+
+.message-container{
+    border-top-left-radius: 0px!important;
+    margin-bottom: 0;
+    float: left;
+    background-color: #ffffff;
+    border-radius: 7.5px;
+    border-top-left-radius: 0px!important;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+    font-size: 14.2px;
+    line-height: 19px;
+    color: #262626;
+    position: relative;
+}
+
+.tail-container{
+    left: -12px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAMAAADp2asXAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACQUExURUxpccPDw9ra2m9vbwAAAAAAADExMf///wAAABoaGk9PT7q6uqurqwsLCycnJz4+PtDQ0JycnIyMjPf3915eXvz8/E9PT/39/RMTE4CAgAAAAJqamv////////r6+u/v7yUlJeXl5f///5ycnOXl5XNzc/Hx8f///xUVFf///+zs7P///+bm5gAAAM7Ozv///2fVensAAAAvdFJOUwCow1cBCCnqAhNAnY0WIDW2f2/hSeo99g1lBYT87vDXG8/6d8oL4sgM5szrkgl660OiZwAAAHRJREFUKM/ty7cSggAABNFVUQFzwizmjPz/39k4YuFWtm55bw7eHR6ny63+alnswT3/rIDzUSC7CrAziPYCJCsB+gbVkgDtVIDh+DsE9OTBpCtAbSBAZSEQNgWIygJ0RgJMDWYNAdYbAeKtAHODlkHIv997AkLqIVOXVU84AAAAAElFTkSuQmCC");
+    /* display: none; */
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    position: absolute;
+    top: -0.5px;
+    width: 12px;
+    height: 19px;
+}
+
+.highlight{
+    opacity: 0;
+}
+
+.message-container-box{
+    padding: 6px 7px 8px 9px;
+    box-sizing: border-box;
+}
+
+.message-user-name{
+    color: #35cd96 !important;
+    color: #74cff8;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 12.8px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-right: 30px;
+}
+
+.message-user-name-text{
+    padding-left: 2px;
+    margin-left: -2px;
+    cursor: pointer;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.message{
+    position: relative;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.message:after{
+    margin-right: 78px;
+    content: "";
+    display: inline;
+}
+
+.selectable-text:after{
+    content: '';
+    display: inline-block;
+    width: 0;
+}
+
+.message-time-container{
+    float: right;
+    margin: 0px 0px 3px;
+    position: relative;
+        z-index: 10;
+}
+
+.message-time{
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 11px;
+    height: 15px;
+    line-height: 15px;
+    white-space: nowrap;
+}
+
+.message-time-pre{
+    margin-left: 1px;
+    margin-right: 2px;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    height: 15px;
+    vertical-align: top;
+}
+
+.message-time-text{
+    vertical-align: top;
+    display: inline-block;
+}
+
+.user-message-container{
+    border-top-right-radius: 0px!important;
+    margin-bottom: 0;
+    float: right;
+    background-color: #dcf8c6;
+    border-radius: 7.5px;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+    border-top-right-radius: 0px!important;
+    max-width: 85%;
+    font-size: 14.2px;
+    line-height: 19px;
+    color: #262626;
+    position: relative;
+}
+
+.user-tail-container{
+    right: -12px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAMAAADp2asXAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADAUExURUxpcXmHa4maet/4yA0aDRMTE8fhsgAAAAAAAMDXrCsxJeX/z1xzXIiYetPsvGBsVUdPPuH8zOH8zNDrvMvmtrrOpwAAAAAAABUVFRoaGtnyxLTMozQ+MMfftFBeSR8nH5aoh6q/mW9+ZN/4yMjhtRwlHAAAAIOWd+r/06C1kkNLOwsLC9z4xur/0+n/0t76x9v4xeL9y+b/z+j/0d/7yeH8yuX/zeD8ytz5xt76yOP/zeH+y+b/zuD8yd35xuf/0MY9jkkAAAAsdFJOUwBvd/ATDZIBAsMp/At/11c9yPbizHoICQwT4bY1ykkgjahl6s8bBYT6nUAWOLbtFAAAAIhJREFUKM/tzbUWwlAURNFBE9zdg0NecLf//yvKUJyUdDnl7HXXletXqmXl9wPbQ9JCcC+VJsOj2mDwovzj3osjHGNFEVxNRAj7UR1hlx+I4FbuC8HkZBE8OwnRxamdFsEmUxCCGdoI51RLBK9xVwTvjyMEbzlDMJMp7lqseNc8YNc6CGyF/a0vcmwhZbCG+kEAAAAASUVORK5CYII=");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 12px;
+    height: 19px;
+
+}
+
+.message-status{
+    margin-left: 3px;
+    display: inline-block;
+}
+
+.message-day-date{
+    margin-bottom: 0;
+    max-width: 100% !important;
+    background-color: rgba(225, 245, 254, 0.92);
+    border-radius: 7.5px;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+    padding: 5px 12px 6px 12px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+    color: rgba(69, 90, 100, 0.95);
+    display: inline-block;
+    -webkit-flex: none;
+    flex: none;
+    font-size: 12.5px;
+    line-height: 21px;
+    position: relative;
+}
+
+.user-message-options-color{
+    background: linear-gradient(to right, rgba(220, 248, 198, 0) 0%, #dcf8c6 50%);
+}
+
+.other-user-message-options-color{
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 50%);
+}
+
+.message-options{
+    right: 5px;
+    top: 3px;
+    height: 25px;
+    overflow: hidden;
+    position: absolute;
+    width: 48px;
+    z-index: 10;
+    top: 5px;
+    display: none;
+}
+
+.message-options-icon{
+    right: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    opacity: .8;
+}
+

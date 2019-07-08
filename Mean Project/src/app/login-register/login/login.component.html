@@ -1,0 +1,63 @@
+<div class="content mb-5">
+  <div class="container sign" style="height: 635px;">
+    <div class="row index">
+      <div class="col-8 px-0">
+        <div style="width: 100%;height: 100%;">
+          <img src="assets/images/school-banner-2.jpg" height="100%" class="img-responsive">
+        </div>
+      </div>
+      <div class="col-4 pt-5">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="text-center deco py-1 font-weight-bold">Sign In</h1>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+          <form *ngIf="!isLoading" [formGroup]='loginForm' (ngSubmit)="submitLoginForm(loginForm)">
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-user fa-fw"></i></span>
+              <mat-form-field>
+                <input
+                  matInput
+                  type="email"
+                  formControlName="email"
+                  placeholder="Email">
+                <mat-error *ngIf="!!f.email.errors?.required">
+                  Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="!!f.email.errors?.email">
+                  Please enter a <strong>valid</strong> email address
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-key fa-fw"></i></span>
+              <mat-form-field>
+                <input
+                  matInput
+                  type="password"
+                  formControlName="password"
+                  placeholder="Password">
+                <mat-error *ngIf="!!f.password.errors?.required">
+                  Password is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <button
+              *ngIf="!isLoading"
+              [disabled]="!loginForm.valid"
+              type="submit" name="check"
+              class="btn_bg mt-3 text-uppercase">login to your account</button>
+          </form>
+
+          <p class="text-center mt-4"><a routerLink='/login' routerLinkActive='active' class="nav-link">forget <u>password</u>?</a></p>
+          <p class="text-center"><a routerLink='/register' routerLinkActive='active' class="nav-link">Not Registered? <u>Sign Up!</u></a></p>
+
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </div>
+</div>

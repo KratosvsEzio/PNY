@@ -1,0 +1,39 @@
+.user-img{
+  margin-right: 15px;
+}
+
+.navbar-brand{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-info{
+  flex-grow: 1;
+}
+
+.user-name{
+  padding-top:5px;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: black;
+}
+
+.menu-btns{
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.menu-btn{
+    border-radius: 50%;
+    padding: 6px;
+}
+
+
+.menu-btn:nth-child(n+2){
+    margin-left: 10px;
+}

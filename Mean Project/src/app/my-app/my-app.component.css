@@ -1,0 +1,70 @@
+@media(max-width: 1300px){
+    .app{
+        width: 100vw!important;
+        height: 100vh!important;
+        margin: 0px!important;
+        border-radius: 0px!important;
+        top: 0!important;
+        left: 0!important;
+    }
+}
+.bg{
+  background-color: #bcbcb7a6;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.bg-top-color{
+  background-color: #3d978b;
+  width: 100%;
+  height: 127px;
+}
+.app{
+    position: absolute;
+    top: 20px;
+    left: 72px;
+    right: 0;
+    width: calc(100% - 144px);
+    height: calc(100% - 40px);
+    border-radius: 3px;
+    min-width: 648px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.menu-dropdown,.message-dropdown{
+    position: absolute;
+    display: none;
+    z-index: 1001;
+    text-align: left;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+    padding: 9px 0px;
+    max-width: 340px;
+    overflow: hidden;
+}
+
+aside{
+    min-width: 259px;
+    flex: 30%;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-group{
+    transform-origin: left top;
+    transform: translateZ(0);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 70%;
+    height:100%;
+}
+
+.chat-group:focus{
+    outline: none!important;
+}

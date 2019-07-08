@@ -1,0 +1,65 @@
+<section class="chat-groups">
+  <div *ngIf="chats.length > 0">
+    <div *ngFor="let chat of chats">
+      <div (click)="newChat(chat)">
+        <div class="menu-chat-group">
+          <div class="menu-chat-group-img">
+            <div *ngFor="let participant of chat.participants">
+              <div *ngIf="participant.name !== user.userName">
+                <img src="{{participant.profileImagePath}}">
+              </div>
+            </div>
+          </div>
+          <div class="menu-chat-group-info">
+            <div class="menu-chat-group-title">
+              <div class="menu-chat-group-title-text">
+                <div *ngFor="let participant of chat.participants">
+                  <div *ngIf="participant.name !== user.userName">
+                    {{participant.name}}
+                  </div>
+                </div>
+              </div>
+              <div  class="menu-chat-group-title-date">
+                <div *ngIf="(chat.messages.length != 0)">
+                  {{ chat.messages[chat.messages.length-1].createdAt | date:'shortTime' }}
+                </div>
+              </div>
+            </div>
+            <span class="menu-chat-group-text">
+              <span  class="menu-chat-group-text-text">
+                <span *ngIf="(chat.messages.length != 0)">
+                  {{ chat.messages[chat.messages.length-1].senderName }} : {{ chat.messages[chat.messages.length-1].message }}
+                </span>
+              </span>
+              <div class="menu-chat-group-messages">
+                <span>
+                  <div class="menu-chat-group-messages-position">
+                    <span class="menu-chat-group-messages-count">
+                      1
+                    </span>
+                  </div>
+                </span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="menu-chat-group-options">
+                <span class="menu-chat-group-options-icon" data-toggle="dropdown"  onclick="dropdown(this,event)">
+                  <div class="_1mGV6">
+                    <span data-icon="down" class="">
+                      <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" width="21" height="21">
+                        <path fill="#263238" fill-opacity=".33" d="M4.8 6.1l5.7 5.7 5.7-5.7 1.6 1.6-7.3 7.2-7.3-7.2 1.6-1.6z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="chats.length <= 0">
+    <p class="text-center text-capitalize text-muted my-5">No Chats were found</p>
+  </div>
+</section>

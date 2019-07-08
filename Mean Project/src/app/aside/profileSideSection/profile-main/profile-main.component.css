@@ -1,0 +1,200 @@
+.profile-side-section-main
+{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+  background-color: #f7f7f7;
+}
+
+.profile-side-section-profile-image{
+  display: flex;
+  flex: none;
+  justify-content: center;
+  margin-bottom: 28px;
+  margin-top: 28px;
+  transform-origin: center center;
+  animation-duration: 0.75s;
+  animation-timing-function: cubic-bezier(0.1, 0.82, 0.25, 1);
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+.profile-side-section-profile-image:hover .change-image{
+  opacity: 1!important;
+}
+
+.profile-image-position{
+  margin-left: auto;
+  margin-right: auto;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateZ(0);
+  height: 200px;
+  overflow: hidden;
+  width: 200px;
+}
+
+.profile-image-position-top{
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  left: 0;
+}
+
+.change-image{
+  opacity: 0;
+  left: 0;
+  background-color: hsla(0,0%,55%,.85);
+  border-radius: 50%;
+  transform: translateZ(0);
+  padding-top: 15px;
+  align-items: center;
+  box-sizing: border-box;
+  color: #f1f2f2;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  height: 100%;
+  justify-content: center;
+  line-height: 15px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.change-image-text{
+  text-align: center;
+  margin-top: 10px;
+  width: 100px;
+}
+
+.profile-side-section-user-name, .profile-side-section-about{
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  margin-bottom: 10px;
+  flex: none;
+  position: relative;
+  animation-duration: 0.75s;
+  animation-timing-function: cubic-bezier(0.1, 0.82, 0.25, 1);
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+.padding{
+  padding: 14px 30px 10px;
+}
+
+.user-name-heading, .about-heading{
+  padding: 0;
+  margin-bottom: 14px;
+}
+
+.user-name-heading-position, .about-heading-position{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+
+.user-name-heading-text, .about-heading-text{
+  color: #128c7e;
+  font-size: 14px;
+  line-height: normal;
+}
+
+.user-name, .about{
+  word-wrap: break-word;
+  position: relative;
+}
+
+.user-name-position, .about-position{
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: flex-start;
+  z-index: 2;
+  position: relative;
+}
+
+.bottom-border{
+  border-bottom: 2px solid #00bfa5;
+}
+
+.text-button-position{
+  position: relative;
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding-right: 0;
+}
+
+.user-name-text, .about-text{
+  margin: 8px 0;
+  padding: 0;
+  min-width: 5px;
+  font-size: 17px;
+  line-height: 20px;
+  min-height: 20px;
+  position: relative;
+  width: 100%;
+  user-select: text;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  outline-style: none;
+}
+
+.user-name-button, .about-button{
+  padding-top: 8px;
+  flex: none;
+  position: relative;
+  width: 24px;
+}
+
+.user-name-edit, .about-edit{
+  position: absolute;
+  top: 6px;
+  right: 0;
+}
+
+.user-name-save, .about-save{
+  position: absolute;
+  top: 6px;
+  right: 0;
+  transform: scaleX(1) scaleY(1);
+  opacity: 1;
+}
+
+.profile-userName-info{
+  margin: 4px 20px 28px 30px;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.1, 0.82, 0.25, 1);
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+.profile-userName-info-text{
+  font-size: 14px;
+  line-height: 20px;
+  color: #929fa6;
+}

@@ -1,0 +1,17 @@
+<div class="height">
+  <app-section-default class="height" *ngIf="chat == null; else chatarea"></app-section-default>
+  <ng-template #chatarea>
+    <div class="chat-area">
+      <app-section-header></app-section-header>
+
+      <article>
+        <app-section-article></app-section-article>
+      </article>
+
+      <footer class="chat-footer">
+        <app-section-footer></app-section-footer>
+      </footer>
+
+    </div>
+  </ng-template>
+</div>
